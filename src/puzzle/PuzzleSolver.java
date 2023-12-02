@@ -95,10 +95,13 @@ public class PuzzleSolver {
     private PuzzlePiece findFixedCornerPiece(PuzzlePiece[] pieces) {
         for (PuzzlePiece piece : pieces) {
             if (this.puzzle.isOneDimensional()) {
-                if (this.puzzle.getRows() == 1) {
-                    piece.rotateToCorner("left");
-                } else {
-                    piece.rotateToCorner("top");
+                if (piece.isLinearCorner()) {
+                    if (this.puzzle.getRows() == 1) {
+                        piece.rotateToCorner("left");
+                    } else {
+                        piece.rotateToCorner("top");
+                    }
+                    return piece;
                 }
             } else {
                 if (piece.isCorner()) {

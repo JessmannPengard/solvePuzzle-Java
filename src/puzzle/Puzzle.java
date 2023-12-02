@@ -64,7 +64,7 @@ public class Puzzle {
     }
 
     public boolean isOneDimensional() {
-        return this.getRows() == 1 || this.getCols() == 1;
+        return (this.getRows() == 1 || this.getCols() == 1);
     }
 
     public static Puzzle loadPuzzle(String fileName) {
