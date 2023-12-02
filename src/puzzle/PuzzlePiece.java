@@ -61,6 +61,14 @@ public class PuzzlePiece {
                 targetPattern = new int[]{-1, -1, 0, 0};
             case "bottom-left" ->
                 targetPattern = new int[]{0, -1, -1, 0};
+            case "left" ->
+                targetPattern = new int[]{0, 0, -1, 0};
+            case "right" ->
+                targetPattern = new int[]{-1, 0, 0, 0};
+            case "top" ->
+                targetPattern = new int[]{0, 0, 0, -1};
+            case "bottom" ->
+                targetPattern = new int[]{0, -1, 0, 0};
             default ->
                 throw new AssertionError();
         }
@@ -105,9 +113,19 @@ public class PuzzlePiece {
         return numBorders == 2;
     }
 
+    public boolean isLinearCorner() {
+        int numBorders = countBorders();
+        return numBorders == 3;
+    }
+
     public boolean isEdge() {
         int numBorders = countBorders();
         return numBorders == 1;
+    }
+
+    public boolean isDoubleEdge() {
+        int numBorders = countBorders();
+        return numBorders == 2;
     }
 
     public boolean isInterior() {

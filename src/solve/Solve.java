@@ -20,10 +20,19 @@ public class Solve {
 
         if (puzzle != null) {
             System.out.println(puzzle.toString());
+            System.out.println("Solving...");
+
             PuzzleSolver solver = new PuzzleSolver(puzzle);
+
+            long startTime = System.currentTimeMillis();
             solver.solve();
+            long endTime = System.currentTimeMillis();
+
+            long executionTime = endTime - startTime;
+
             String solutions = solver.getSolutionsAsString();
             System.out.println(solutions);
+            System.out.println("Solved in " + executionTime / 1000 + " secs.");
 
         }
     }

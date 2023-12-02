@@ -63,6 +63,10 @@ public class Puzzle {
         return sb.toString();
     }
 
+    public boolean isOneDimensional() {
+        return this.getRows() == 1 || this.getCols() == 1;
+    }
+
     public static Puzzle loadPuzzle(String fileName) {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String firstRow = br.readLine();
