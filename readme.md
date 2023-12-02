@@ -12,7 +12,7 @@ Puzzle Solver is a JAVA-based application that solves puzzles provided as text f
 
 ### Prerequisites
 
-- Java 8 or later
+- Java 19 or later
 
 ### Installation
 
@@ -46,6 +46,6 @@ In this example, the puzzle has a width of 3 and a height of 2. Each of the foll
 
 To run the unit tests, use the following command:
 
-    ./gradlew test
+    ant test
 
 This assumes you have Gradle installed. If not, you can use ./gradlew.bat on Windows.

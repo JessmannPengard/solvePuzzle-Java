@@ -38,7 +38,7 @@ public class Puzzle {
     }
 
     public PuzzlePiece[] getPieces() {
-        return this.pieces;
+        return this.pieces != null ? this.pieces : new PuzzlePiece[0];
     }
 
     public void setPieces(PuzzlePiece[] pieces) {
