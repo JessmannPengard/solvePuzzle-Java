@@ -40,12 +40,3 @@ The puzzle file should follow a specific format. The first line of the file spec
 ```
 
 In this example, the puzzle has a width of 3 and a height of 2. Each of the following lines represents a puzzle piece, with the numbers indicating the faces of the piece.
-
-
-## Running Tests
-
-To run the unit tests, use the following command:
-
-    ant test
-
-This assumes you have Gradle installed. If not, you can use ./gradlew.bat on Windows.
