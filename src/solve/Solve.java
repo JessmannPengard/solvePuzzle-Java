@@ -4,11 +4,20 @@ import puzzle.Puzzle;
 import puzzle.PuzzleSolver;
 
 /**
+ * A class to solve puzzles loaded from a file.
+ *
+ * Usage: java solve.Solve [filename]
  *
  * @author jessmann
  */
 public class Solve {
 
+    /**
+     * The main method to execute the puzzle-solving application.
+     *
+     * @param args Command line arguments. Expects a filename as the first
+     * argument.
+     */
     public static void main(String[] args) {
         if (args.length < 1) {
             System.out.println("Ussage: solve [filename]");

@@ -6,8 +6,18 @@ import static org.junit.Assert.*;
 import puzzle.Puzzle;
 import puzzle.PuzzlePiece;
 
+/**
+ * Test class for the Puzzle class. Focuses on methods related to the creation
+ * and manipulation of Puzzle instances.
+ *
+ * @author jessmann
+ */
 public class PuzzleTest {
 
+    /**
+     * Verifies that the constructor and getters work correctly when setting the
+     * columns, rows, and pieces of a puzzle.
+     */
     @Test
     public void testConstructorAndGetters() {
         Puzzle puzzle = new Puzzle(1, 2, null);
@@ -19,6 +29,10 @@ public class PuzzleTest {
         assertEquals(0, puzzle.getPieces().length);
     }
 
+    /**
+     * Verifies that the setter methods correctly set the columns, rows, and
+     * pieces of a puzzle.
+     */
     @Test
     public void testSetters() {
         Puzzle puzzle = new Puzzle(1, 2, null);
@@ -32,6 +46,10 @@ public class PuzzleTest {
         assertEquals(Arrays.asList(piece), Arrays.asList(puzzle.getPieces()));
     }
 
+    /**
+     * Verifies that the isOneDimensional method correctly identifies whether a
+     * puzzle is one-dimensional or not.
+     */
     @Test
     public void testIsOneDimensional() {
         Puzzle puzzle1DX = new Puzzle(1, 3, null);

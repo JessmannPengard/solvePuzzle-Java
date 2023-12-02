@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * A class for solving puzzles.
  *
  * @author jessmann
  */
@@ -13,10 +14,20 @@ public class PuzzleSolver {
     private final Puzzle puzzle;
     private final List<PuzzlePiece[][]> solutions = new ArrayList<>();
 
+    /**
+     * Constructs a PuzzleSolver for the specified puzzle.
+     *
+     * @param puzzle The puzzle to be solved.
+     */
     public PuzzleSolver(Puzzle puzzle) {
         this.puzzle = puzzle;
     }
 
+    /**
+     * Gets the solutions as a formatted string.
+     *
+     * @return A string representation of the solutions.
+     */
     public String getSolutionsAsString() {
         StringBuilder result = new StringBuilder();
         result.append("\nSolution(s):\n");
@@ -32,10 +43,17 @@ public class PuzzleSolver {
         return result.toString();
     }
 
+    /**
+     * Solves the puzzle and stores the solutions.
+     */
     public void solve() {
         solvePuzzle(0, 0, new PuzzlePiece[puzzle.getRows()][puzzle.getCols()], new ArrayList<>());
     }
 
+    // Private helper methods
+    /**
+     * Recursive helper method to solve the puzzle.
+     */
     private void solvePuzzle(int row, int col, PuzzlePiece[][] currentSolution, List<PuzzlePiece> usedPieces) {
         int numPieces = this.puzzle.getPieces().length;
 
@@ -92,6 +110,12 @@ public class PuzzleSolver {
         }
     }
 
+    /**
+     * Finds a fixed corner piece to start the puzzle solving process.
+     *
+     * @param pieces The array of puzzle pieces.
+     * @return A corner piece suitable for starting the puzzle.
+     */
     private PuzzlePiece findFixedCornerPiece(PuzzlePiece[] pieces) {
         for (PuzzlePiece piece : pieces) {
             if (this.puzzle.isOneDimensional()) {
@@ -113,6 +137,15 @@ public class PuzzleSolver {
         return null;
     }
 
+    /**
+     * Attempts to place a puzzle piece in the current solution.
+     *
+     * @param row The row where the piece is being placed.
+     * @param col The column where the piece is being placed.
+     * @param piece The puzzle piece to place.
+     * @param solution The current puzzle solution.
+     * @return True if the piece can be placed, false otherwise.
+     */
     private boolean tryPiece(int row, int col, PuzzlePiece piece, PuzzlePiece[][] solution) {
         int width = this.puzzle.getCols();
         int height = this.puzzle.getRows();
@@ -276,6 +309,11 @@ public class PuzzleSolver {
         return false;
     }
 
+    /**
+     * Saves a valid puzzle solution to the solutions list.
+     *
+     * @param currentSolution The current puzzle solution.
+     */
     private void saveSolution(PuzzlePiece[][] currentSolution) {
         int numRows = currentSolution.length;
         int numCols = currentSolution[0].length;
