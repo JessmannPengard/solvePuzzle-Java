@@ -66,7 +66,7 @@ public class PuzzleSolver {
         }
 
         // Base case: If we've placed all the pieces, we found a solution
-        if (usedPieces.size() == this.puzzle.getPieces().length) {
+        if (usedPieces.size() == numPieces) {
             // Save the current solution to the solutions array
             saveSolution(currentSolution);
             return;
