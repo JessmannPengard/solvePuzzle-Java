@@ -87,7 +87,7 @@ public class PuzzlePiece {
     /**
      * Rotates the puzzle piece to a specified corner.
      *
-     * @param corner The corner to which the piece should be rotated.
+     * @param position The corner to which the piece should be rotated.
      */
     public void rotateToCorner(String position) {
         int[] targetPattern = new int[4];
@@ -121,7 +121,7 @@ public class PuzzlePiece {
     /**
      * Rotates the puzzle piece to a specified edge.
      *
-     * @param edge The edge to which the piece should be rotated.
+     * @param position The edge to which the piece should be rotated.
      */
     public void rotateToEdge(String position) {
         int[] targetPattern = new int[4];

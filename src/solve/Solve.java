@@ -6,7 +6,7 @@ import puzzle.PuzzleSolver;
 /**
  * A class to solve puzzles loaded from a file.
  *
- * Usage: java solve.Solve [filename]
+ * Usage: java -jar solve.jar path/to/puzzle.txt
  *
  * @author jessmann
  */

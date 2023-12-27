@@ -59,7 +59,7 @@ public class Puzzle {
     /**
      * Sets the number of rows in the puzzle.
      *
-     * @param cols The number of columns.
+     * @param rows The number of columns.
      */
     public void setRows(int rows) {
         this.rows = rows;
